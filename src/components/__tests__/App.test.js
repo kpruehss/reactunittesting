@@ -9,8 +9,8 @@ it('shows a comment box', () => {
   ReactDOM.render(<App />, div);
 
   // Looks inside the div and checks for CommentBox component
-  console.log(div.innerHTML);
-  
+  // console.log(div.innerHTML);
+  expect(div.innerHTML).toContain('Comment Box');
 
   ReactDOM.unmountComponentAtNode(div);
 });
