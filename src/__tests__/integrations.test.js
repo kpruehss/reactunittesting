@@ -27,7 +27,7 @@ it('can fetch a list of comments and display them', (done) => {
   wrapped.find('.fetch-comments').simulate('click');
   // wait to allow reducers to update state
   // then expect to find a list of comments!
-  setTimeout(() => {
+  moxios.wait(() => {
     wrapped.update();
     expect(wrapped.find('li').length).toEqual(2);
     done();
