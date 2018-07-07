@@ -18,5 +18,10 @@ beforeEach(() => {
 });
 
 it('creates one li per comment', () => {
-  console.log(wrapped.find('li').length);
+  expect(wrapped.find('li').length).toEqual(2);
+});
+
+it('renders text in each li', () => {
+  expect(wrapped.render().text()).toContain('Comment 1');
+  expect(wrapped.render().text()).toContain('Comment 2');
 });
